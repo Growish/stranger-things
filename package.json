@@ -18,6 +18,7 @@
   "homepage": "https://github.com/Growish/stranger-things#readme",
   "dependencies": {
     "express": "^4.16.2",
+    "joi": "^13.0.1",
     "socket.io": "^2.0.4"
   }
 }
