@@ -1,6 +1,9 @@
 angular
     .module('appStrangerThings', [])
-    .controller('strangerThingsController', function ($scope) {
+    .controller('strangerThingsController', function ($scope, $timeout) {
+
+
+        $scope.responseLetter = "";
 
         var socket = io.connect();
 
@@ -8,14 +11,16 @@ angular
 
 
         $scope.pressLetter = function (i) {
-            socket.emit('message', i);
-            console.log(i, 'o');
+            $scope.sendLetter = i;
+            socket.emit('message', $scope.sendLetter);
+            console.log($scope.sendLetter, 'send');
         };
-
 
         socket.on('message', function (response) {
             $scope.responseLetter = response;
-            console.log( $scope.responseLetter, 'respo');
-        })
+            console.log($scope.responseLetter, 'resp')
+
+        });
+
 
     });

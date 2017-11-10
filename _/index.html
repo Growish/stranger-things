@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-sm-3 text-center" ng-repeat="letter in letters">
                 <div class="spacer20">
-                    <h2 ng-class="{'color-letter': responseLetter == letter}">{{letter | uppercase}}</h2>
+                    <h2 ng-class="{'color-red': responseLetter === letter}">{{letter | uppercase}}</h2>
                 </div>
                 <button type="button" class="btn btn-default btn-xs" ng-click="pressLetter(letter)">Press</button>
             </div>
